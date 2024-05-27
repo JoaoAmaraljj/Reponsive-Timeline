@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+    padding: o;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #17202a;
+    color: hwb(0 100% 0% / 0.664);
+    overflow-x: hidden;
+    font-family: "poppins", sans-serif;
+}
+
+.heading{
+    color: #f4d03f;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 3rem;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title{
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 0.1rem 0rem 0.2rem 0.7rem;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #fff;
+    font-size: 1.3rem;
+    background-color: #de3163;
+}
+
+
+.year{
+    background-color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    margin: 0.05rem;
+}
+
+#timeline p{
+    padding: 1rem 0rem 1rem;
+    color: #000;
+}
+
+#timeline button {
+    margin: 0.5rem 0rem 1rem 1rem;
+    outline: none;
+    border: 2px solid #ddddddce;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border-color: #000;
+    background: transparent;
+    transition: all 0.3s ease-in;
+    font-family: inherit;
+    cursor: pointer;
+    margin-left: 33%;
+}
+
+#timeline button:hover{
+    background-color: #17202a;
+    color: #fff;
+}
+
+#timeline ul{
+  padding: 50px 0;  
+}
+
+/*create aline */
+#timeline ul li{
+    list-style: none;
+    position: relative;
+    width: 7px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #58d68e;
+}
+
+#timeline ul li .box{
+    position: relative;
+    bottom: 0;
+    width: 450px;
+    background-color: #ffffffd0;
+    box-shadow: 0,0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transform: translateX(400%);
+    transition: all 0.5s ease-in-out;
+}
+
+/*right side*/
+#timeline ul li:nth-child(odd) .box{
+    left: 48px;
+}
+
+/*left side*/
+#timeline ul li:nth-child(even) .box{
+    left: -490px;
+    transform: translateX;
+}
+
+#timeline ul li .box.show{
+    transform: translateX(0%);
+    transition: all 0.5s ease-in-out;
+}
+
+#timeline ul li i{
+    position: absolute;
+    left: 50%;
+    top: 20;
+    width: 45px;
+    height: 45px;
+    background: #2c3e50;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+#timeline .fa-brands, 
+#timeline .fa-solid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: #f4d03f;
+}
+
+/*arrow*/
+#timeline .box:before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 0;
+    right: 0;
+    border-style: solid;
+}
+
+#timeline ul li:nth-child(odd) .box:before{
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #de3163;
+}
+
+#timeline ul li:nth-child(even) .box:before{
+    right: -15px;
+    border-width: 8px 0px 8px 16px;
+    border-color: transparent #de3163;
+}
+
+@media(max-width: 900px){
+    #timeline ul li .box {
+        width: 350px;
+    }
+    
+    #timeline ul li:nth-child(even) .box:before{
+        left: -15px;
+        border-width: 8px 16px 8px 0px;
+        border-color: transparent #de3163;
+    }
+
+    /*right side*/
+    #timeline ul li:nth-child(odd) .box{
+        left: 40px;
+    }
+    
+    /*Left side*/
+    #timeline ul li:nth-child(even) .box{
+        left: -390px;
+    }
+}
+
+@media(max-width: 768px){
+    #timeline ul li{
+        margin-left: 30px;
+    }
+
+    #timeline ul li .box{
+        width: calc(100vw -90px);
+    }
+
+    /*left side content*/
+    #timeline ul li:nth-child(even) .box{
+        left: 40px;
+    }
+
+    #timeline ul li:nth-child(even) .box:before{
+        left: -15px;
+        border-width: 8px 16px 8px 0px;
+        border-color: transparent #de3163;
+    }
+}
